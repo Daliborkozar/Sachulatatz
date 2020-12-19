@@ -17,6 +17,66 @@ body {
         'main'
         'footer';
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem 1fr 5rem;
+    grid-template-rows: 10rem 1fr 10rem;
     height: 100%;
+}
+
+header {
+    display: block;
+    grid-area: header;
+    background-color: #2B2B2B; 
+    align-items: center;
+}
+
+main {
+    grid-area: main;
+    background-color: bisque;
+}
+
+footer {
+    grid-area: footer;
+    color: #2B2B2B;
+    
+    padding: 10px 0;
+    font-size: 1.3rem;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navhead {
+    margin-bottom: 50px;
+}
+
+header a {
+    padding: 1rem;
+    color: cornsilk;
+}
+
+header img {
+        border-radius: 50%;
+        width: 80px;
+        vertical-align: middle
+}
+a.brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/*Common*/
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkcyan;
+}
+
+.row.center {
+    justify-content: center;
 }
