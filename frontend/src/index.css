@@ -1,0 +1,168 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+html {
+    font-size: 62.5%; /*16px default 62.5 = 10px = 1rem*/
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Helvetica,Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 1fr 10rem;
+    height: 100%;
+}
+
+header {
+    display: block;
+    grid-area: header;
+    background-color: #2B2B2B; 
+    align-items: center;
+}
+
+main {
+    grid-area: main;
+    background-color: bisque;
+}
+
+footer {
+    grid-area: footer;
+    color: #2B2B2B;
+    
+    padding: 10px 0;
+    font-size: 1.3rem;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navhead {
+    margin-bottom: 50px;
+}
+
+header a {
+    padding: 1rem;
+    color: cornsilk;
+}
+
+header img {
+        border-radius: 50%;
+        width: 80px;
+        vertical-align: middle
+}
+a.brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/*Common*/
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkcyan;
+}
+
+.row.center {
+    justify-content: center;
+}
+
+/*Common*/
+
+h1 {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+h1 {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+
+img {
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+img.medium {
+    max-width: 29rem;
+    width: 100%;
+}
+
+.card {
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body > * {
+    margin: 0.5;
+}
+
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin: 1rem;
+}
+
+.product-price small {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #fbb72c;
+}
+
+/*Common*/
+
+.rating span {
+    color: #FFD700;
+    margin: 0.1rem;
+}
