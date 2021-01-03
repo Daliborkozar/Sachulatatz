@@ -1,4 +1,13 @@
 import React from 'react'
+import data from './data'
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
+import { FaStarHalfAlt } from "@react-icons/all-files/fa/FaStarHalfAlt";
+import {FaShoppingCart} from "@react-icons/all-files/fa/FaShoppingCart"
+import {FaHeart} from '@react-icons/all-files/fa/FaHeart'
+
+
+
+
 
 
 function App(){
@@ -21,29 +30,35 @@ function App(){
         </header>
         <main>
            <div className="row center">
-            <div className="card">
-                <a href="product.html">
-                    <img className="medium" src="slika2.jpg" alt="product"/></a>
-                <div className="cart-body">
-                    <a href="product.html">
-                    <h2>Save the queen</h2>
-                    </a>
-                </div>
-                <div className="rating">
-                    <span><i className="fa fa-star"></i></span>
-                    <span><i className="fa fa-star"></i></span>
-                    <span><i className="fa fa-star"></i></span>
-                    <span><i className="fa fa-star"></i></span>
-                    <span><i className="fa fa-star"></i></span>
-                </div>
-                <div className="product-bottom-details row">
-                    <div className="product-price"><small>1900,00 Rsd</small>1200,00 Rsd</div>
-                    <div className="product-links">
-                        <a href=""><i className="fa fa-heart"></i></a>
-                        <a href=""><i className="fa fa-shopping-cart"></i></a>
+               {
+                   data.products.map(product => (
+                    <div className="card" key={product._id}>
+                    <a href={`/product/${product._id}`}>
+                        <img className="medium" src={product.image} alt={product.name}/></a>
+                    <div className="cart-body">
+                        <a href={`/product/${product._id}`}>
+                        <h2>{product.name}</h2>
+                        </a>
+                    </div>
+                    <div className="rating">
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStarHalfAlt />
+                        
+                    </div>
+                    <div className="product-bottom-details row">
+                        <div className="product-price"><small>1900,00 Rsd</small>{product.price} rsd</div>
+                        <div className="product-links">
+                            <FaHeart />
+                            <FaShoppingCart />
+                        </div>
                     </div>
                 </div>
-            </div>
+                   ))
+               }
+            
             
            
             
