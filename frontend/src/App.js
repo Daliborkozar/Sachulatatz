@@ -15,17 +15,17 @@ function App(){
     <div className="grid-container">
         <header className="row" >
             <div>
-                <a><img src="logo.jpg" alt="logo"/></a>
-                <a href="index.html" className="brand">Sachulatatz</a>
+                <a href="/"><img src="logo.jpg" alt="logo"/></a>
+                <a href="/" className="brand">Sachulatatz</a>
             </div>
             <div>
-                <a href="majce.html">Majice</a>
+                <a href="/majce">Majice</a>
                
-                <a href="suveniri.html">Suveniri</a>
+                <a href="/suveniri">Suveniri</a>
             </div>
             <div>
-                <a href="cart.html">Korpa</a>
-                <a href="singin.html">Sign in</a>
+                <a href="/cart">Korpa</a>
+                <a href="/signin">Sign in</a>
             </div>      
         </header>
         <main>
