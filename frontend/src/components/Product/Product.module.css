@@ -1,0 +1,11 @@
+.rating {
+    color: #FFD700;
+    margin: 0.1rem;
+}
+
+.rating span:last-child{
+    color: #585a5c;
+    padding-left: 0.5rem; 
+    display:inline-block;
+    font-size: 1.2rem;
+}

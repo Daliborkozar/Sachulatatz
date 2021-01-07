@@ -4,6 +4,7 @@ import { FaStarHalfAlt } from "@react-icons/all-files/fa/FaStarHalfAlt";
 import {FaRegStar} from '@react-icons/all-files/fa/FaRegStar'
 
 
+
 const Rating = props => {
     const {rating , numReviews} = props
     return (
@@ -13,6 +14,7 @@ const Rating = props => {
             {rating >=3 ? <FaStar /> : rating>=2.5 ? <FaStarHalfAlt/> : <FaRegStar />}
             {rating >=4 ? <FaStar /> : rating>=3.5 ? <FaStarHalfAlt/> : <FaRegStar />}
             {rating >=5 ? <FaStar /> : rating>=4.5 ? <FaStarHalfAlt/> : <FaRegStar />}
+            <span>({numReviews})</span>
             
         </div>
     )
