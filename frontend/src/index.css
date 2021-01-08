@@ -34,13 +34,15 @@ body {
 header {
     display: block;
     grid-area: header;
-    background-color: #2B2B2B; 
+    background-color: #7e7a7a; 
     align-items: center;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    z-index: 10;
 }
 
 main {
     grid-area: main;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
 }
 
 footer {
@@ -94,10 +96,7 @@ a:hover {
 
 /*Common*/
 
-h1 {
-    font-size: 1.8rem;
-    padding: 1rem 0;
-}
+
 
 h1 {
     font-size: 1.6rem;
@@ -153,7 +152,7 @@ img.medium {
     margin-left: 5px;
     color: #e1e1e1;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 11rem;
 }
 
 .product-links a:hover {

@@ -14,7 +14,7 @@ const data = {
         },
         {
             _id: '2',
-            name: 'poljoprivrednik',
+            name: 'Kontroverzni poljoprivrednik',
             category: 'Shirts',
             image: '/images/slika2.jpg',
             price: 1200,
@@ -22,7 +22,7 @@ const data = {
             rating: 3.5,
             numReviews: 10,
             descpription: 'hight quality shirt',
-            countInStock: 5
+            countInStock: 0
         },
         {
             _id: '3',
