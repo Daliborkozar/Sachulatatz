@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
-import HomeScreen from './containers/HomeScreen'
-import ProductScreen from './containers/ProductScreen'
+import HomeScreen from './containers/HomeScreen/HomeScreen'
+import ProductScreen from './containers/ProductScreen/ProductScreen'
 import Logo from './assets/logo.jpg'
 
 function App(){

@@ -1,6 +1,6 @@
 import React from 'react'
-import Product from '../components/Product/Product'
-import data from '../data/data'
+import Product from '../../components/Product/Product'
+import data from '../../data/data'
 
 const HomeScreen = () => {
     return (
