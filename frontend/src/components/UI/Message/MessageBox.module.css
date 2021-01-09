@@ -1,0 +1,11 @@
+.MessageBox {
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+p {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}

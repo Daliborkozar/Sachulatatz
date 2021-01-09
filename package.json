@@ -1,0 +1,26 @@
+{
+  "name": "sachulatatz",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "I will be building this project using React for the frontend and node,express and mongoDB for the backend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daliborkozar/Sachulatatz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daliborkozar/Sachulatatz/issues"
+  },
+  "homepage": "https://github.com/Daliborkozar/Sachulatatz#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

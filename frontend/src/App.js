@@ -17,6 +17,7 @@ function App(){
           <a href="/" className="brand">
             Sachulatatz
           </a>
+
         </div>
         <div>
           <a href="/majce">Majice</a>
