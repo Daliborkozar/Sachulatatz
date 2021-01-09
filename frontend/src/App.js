@@ -3,6 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import HomeScreen from './containers/HomeScreen/HomeScreen'
 import ProductScreen from './containers/ProductScreen/ProductScreen'
 import Logo from './assets/logo.jpg'
+import Logoanim from './assets/logoanim280px.svg'
 
 function App(){
   

@@ -1,6 +1,7 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
 
 html {
     font-size: 62.5%; /*16px default 62.5 = 10px = 1rem*/
@@ -76,8 +77,10 @@ header img {
         vertical-align: middle
 }
 a.brand {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
+    font-family: 'Sail', cursive;
+    color:#ECEBEB;
 }
 
 /*Common*/
