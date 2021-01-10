@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './MessageBox.module.css'
 
-const MessageBox = () => {
+const MessageBox = (props) => {
     return (
         <div className={classes.MessageBox}>
-            <p>Error Loading data</p>
+            <p>{props.children}</p>
         </div>
     )
 }

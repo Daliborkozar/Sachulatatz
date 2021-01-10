@@ -2,10 +2,14 @@
     display: block;
     position: relative;
     margin: auto;
+    padding: 1rem;
 }
 
 .MessageBox p {
-    color: red;
-    font-weight: bold;
+    color: rgb(124, 43, 43);
+    
     text-align: center;
+    padding: 10px;
+    background-color: rgb(241, 192, 202);
+    border-radius: 1rem;
 }

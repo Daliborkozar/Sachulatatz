@@ -27,7 +27,7 @@ const Product = (props) => {
               </div>
               <div className="product-bottom-details row">
                 <div className="product-price">
-                  <small>1900,00 Rsd</small>
+                {/* <small>{product.salePrice ? product.salePrice + 'rsd' : null}</small> */}
                   {product.price} rsd
                 </div>
                 <div className="product-links">

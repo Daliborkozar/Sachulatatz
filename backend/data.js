@@ -5,7 +5,7 @@ const data = {
             name: 'God Save The Queen',
             category: 'Shirts',
             image: '/images/slika1.jpg',
-            salePrice: null,
+            salePrice: 900,
             price: 1200,
             rating: 4.5,
             numReviews: 10,
