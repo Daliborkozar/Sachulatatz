@@ -15,7 +15,7 @@ function App(){
           <a href="/">
             <img src={Logo} alt="logo" />
           </a>
-          <a href="/" className="brand">
+          <a href="/" className="brand fade-in">
             Sachulatatz
           </a>
 
