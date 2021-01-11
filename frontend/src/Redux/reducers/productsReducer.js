@@ -1,4 +1,4 @@
-import data from "../../data/data"
+
 import {
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_REQUEST,
@@ -6,7 +6,7 @@ import {
 } from '../actions/types/types'
 
 const initialState = {
-    products: [],
+    products:[],
     loading: false,
     error: ''
 }
@@ -22,12 +22,17 @@ const productsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                products: action.payload.products
+                products: action.payload
+            }
+        case FETCH_PRODUCTS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
             }
             default: return state
         }
         
     }
-
 
 export default productsReducer

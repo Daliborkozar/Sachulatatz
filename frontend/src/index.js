@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {createStore,compose,applyMiddleware} from 'redux'
+import {createStore,compose,applyMiddleware, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
 import productsReducer from './Redux/reducers/productsReducer'
 import thunk from 'redux-thunk'
 
 const composeEnheancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
+const reducer = combineReducers({
+  productList: productsReducer
+})
+
 const store= createStore(
-  productsReducer,
+  reducer,
   composeEnheancer(applyMiddleware(thunk))
 )
 
