@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/Rating/Rating";
-
+import {Link} from 'react-router-dom'
 import { fetchProductDetails } from "../../Redux/actions/productsAction";
 import classes from './ProductScreen.module.css'
 import Loader from '../../components/UI/Loader/Loader'
@@ -15,6 +15,7 @@ const ProductScreen = (props) => {
 
   
   const productId = props.match.params.id
+  console.log(productId)
 
   useEffect(() => {
     dispatch(fetchProductDetails(productId))
@@ -35,6 +36,7 @@ const ProductScreen = (props) => {
   }else {
     detailsOfProduct = (
       <>
+      <Link to='/'>Back to results</Link>
     <div className={classes.productcontainer}>
     <div className={classes.col2}>
       <img src={currentProduct.image} alt={currentProduct.name}></img>

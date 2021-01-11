@@ -12,7 +12,7 @@ const initialState = {
     products:[],
     loading: false,
     error: '',
-    currentProduct: {}
+    currentProduct: {},
 }
 
 const productsReducer = (state = initialState, action) => {

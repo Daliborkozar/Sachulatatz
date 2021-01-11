@@ -11,7 +11,7 @@ const HomeScreen = () => {
     
     const {loading, error, products} = productListed
     const dispatch = useDispatch()
-
+    
     useEffect(() => {
       dispatch(fetchProductList())
     }, [dispatch])
