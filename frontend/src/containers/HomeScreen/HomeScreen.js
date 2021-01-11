@@ -36,7 +36,6 @@ const HomeScreen = () => {
     return (
         <div>
             {listOfProducts}
-           
         </div>
     )
 }

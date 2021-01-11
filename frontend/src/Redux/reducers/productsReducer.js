@@ -2,13 +2,17 @@
 import {
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_REQUEST,
-    FETCH_PRODUCTS_FAIL
+    FETCH_PRODUCTS_FAIL,
+    FETCH_DETAIL_REQUEST,
+    FETCH_DETAIL_SUCCESS,
+    FETCH_DETAIL_FAIL
 } from '../actions/types/types'
 
 const initialState = {
     products:[],
     loading: false,
-    error: ''
+    error: '',
+    currentProduct: {}
 }
 
 const productsReducer = (state = initialState, action) => {
@@ -25,6 +29,23 @@ const productsReducer = (state = initialState, action) => {
                 products: action.payload
             }
         case FETCH_PRODUCTS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        case FETCH_DETAIL_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case FETCH_DETAIL_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                currentProduct: action.payload 
+            }
+        case FETCH_DETAIL_FAIL:
             return {
                 ...state,
                 loading: false,
