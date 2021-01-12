@@ -10,7 +10,7 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             descpription: 'hight quality shirt',
-            countInStock: 5
+            countInStock: 10
         },
         {
             _id: '2',
@@ -22,7 +22,7 @@ const data = {
             rating: 3.5,
             numReviews: 10,
             descpription: 'hight quality shirt',
-            countInStock: 0
+            countInStock: 2
         },
         {
             _id: '3',
@@ -34,7 +34,7 @@ const data = {
             rating: 4.5,
             numReviews: 10,
             descpription: 'hight quality shirt',
-            countInStock: 5
+            countInStock: 10
         }
     ]
 }

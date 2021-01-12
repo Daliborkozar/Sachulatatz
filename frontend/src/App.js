@@ -3,6 +3,8 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import HomeScreen from './containers/HomeScreen/HomeScreen'
 import ProductScreen from './containers/ProductScreen/ProductScreen'
 import Logo from './assets/logo.jpg'
+import CartScreen from './containers/CartScreen/CartScreen'
+
 
 
 function App(){
@@ -30,8 +32,10 @@ function App(){
         </div>
       </header>
       <main>
+        <Route path='/cart/:id?' component={CartScreen}></Route>
         <Route path="/product/:id" component={ProductScreen}></Route>
         <Route path='/' component={HomeScreen} exact></Route>
+        
         
       </main>
       <footer className="row center">

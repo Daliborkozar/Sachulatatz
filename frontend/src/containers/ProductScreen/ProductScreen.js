@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/Rating/Rating";
 import {Link} from 'react-router-dom'
@@ -7,10 +7,14 @@ import classes from './ProductScreen.module.css'
 import Loader from '../../components/UI/Loader/Loader'
 import MessageBox from '../../components/UI/Message/MessageBox'
 
+//TODO: Size selection based on available sizes
+
 const ProductScreen = (props) => {
   const dispatch = useDispatch()
   const productDetail = useSelector(state => state.productList)
   const { currentProduct, error, loading } = productDetail
+  const [qty, setQty] = useState(1)
+  const [size, setSize] = useState("S")
   
 
   
@@ -22,10 +26,18 @@ const ProductScreen = (props) => {
   }, [dispatch, productId]) 
 
 
-  // const product = data.products.find((x) => x._id === props.match.params.id);
-  // if (!product) {
-  //   return <div>Proizvod nije pronadjen</div>;
-  // }
+  const quatityhandler = (e) => {
+    setQty(e.target.value)
+  }
+
+  const sizeHandler = (e) => {
+    setSize(e.target.value)
+  }
+
+  const addtoCartHandler =(e) => {
+    e.preventDefault()
+    props.history.push(`/cart/${productId}?qty=${qty}`)
+  }
   
   let detailsOfProduct = null
 
@@ -85,11 +97,12 @@ const ProductScreen = (props) => {
           </li>
           <li>
             {currentProduct.countInStock > 0 && (
-              <form >
-                
+              <form onSubmit={addtoCartHandler}>
                 <label>
                   Velicina:
-                  <select>
+                  <select 
+                    value={size}
+                    onChange={sizeHandler}>
                     <option value="s">S</option>
                     <option value="m">M</option>
                     <option value="l">L</option>
@@ -100,27 +113,16 @@ const ProductScreen = (props) => {
                 
                 <label>
                   Kolicina:
-                  <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="1">5</option>
-                    <option value="1">6</option>
+                  <select 
+                  value={qty}
+                  onChange={quatityhandler}>
+                    {Array.from(Array(currentProduct.countInStock).keys()).map(x => (
+                      <option key={x+1} value={x+1}>{x+1}</option>
+                    ))}
                   </select>
                 </label>
                 <input className={classes.btn} type="submit" value="Dodaj u korpu" />
               </form>
-              // <div className={classes.rowMode}>
-              //   <label>Kol</label>
-
-              // </div>
-
-              // <li>
-              // <button className={classes.btn}><span>Dodaj u korpu</span></button>
-              // </li>
-              
-               
             )}
           </li>
           
