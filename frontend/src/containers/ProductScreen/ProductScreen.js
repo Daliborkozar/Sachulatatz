@@ -36,7 +36,7 @@ const ProductScreen = (props) => {
 
   const addtoCartHandler =(e) => {
     e.preventDefault()
-    props.history.push(`/cart/${productId}?qty=${qty}`)
+    props.history.push(`/cart/${productId}?qty=${qty}&size=${size}`)
   }
   
   let detailsOfProduct = null

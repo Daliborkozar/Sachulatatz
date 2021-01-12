@@ -6,7 +6,7 @@ import {
 
 import Axios from 'axios'
 
-export const addItems = (data,qty) => {
+export const addItems = (data,qty,size) => {
     return {
         type: CART_ADD_ITEM,
         payload: {
@@ -16,13 +16,14 @@ export const addItems = (data,qty) => {
             countInStock: data.countInStock,
             product: data._id,
             qty,
+            size,
         }
     }
 }
 
 
 //ADD and REMOVE ITEMS from cart
-export const addToCart = (productId, qty)=> async(dispatch, getState) => {
+export const addToCart = (productId, qty,size)=> async(dispatch, getState) => {
     const {data} = await Axios.get(`/api/products/${productId}`)
-    dispatch(addItems(data,qty))
+    dispatch(addItems(data,qty,size))
 }

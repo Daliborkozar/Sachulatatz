@@ -9,7 +9,7 @@ TODO:
 ~~Display products from data.js~~
 ~~Create Rating~~
 ~~Build Product screen~~
-~~Create Product component ~~
+~~Create Product component~~
 ~~Create Node server~~
 ~~Install eslint~~
 ~~Add Redux, middleware~~
