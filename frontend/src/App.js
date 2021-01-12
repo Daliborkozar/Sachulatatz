@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Link, Route} from 'react-router-dom'
 import HomeScreen from './containers/HomeScreen/HomeScreen'
 import ProductScreen from './containers/ProductScreen/ProductScreen'
 import Logo from './assets/logo.jpg'
@@ -14,21 +14,21 @@ function App(){
     <div className="grid-container">
       <header className="row">
         <div>
-          <a href="/">
+          <Link to="/">
             <img src={Logo} alt="logo" />
-          </a>
-          <a href="/" className="brand fade-in">
+          </Link>
+          <Link to="/" className="brand fade-in">
             Sachulatatz
-          </a>
+          </Link>
 
         </div>
         <div>
-          <a href="/majce">Majice</a>
-          <a href="/suveniri">Suveniri</a>
+          <Link to="/majce">Majice</Link>
+          <Link to="/suveniri">Suveniri</Link>
         </div>
         <div>
-          <a href="/cart">Korpa</a>
-          <a href="/signin">Sign in</a>
+          <Link to="/cart">Korpa</Link>
+          <Link to="/signin">Sign in</Link>
         </div>
       </header>
       <main>

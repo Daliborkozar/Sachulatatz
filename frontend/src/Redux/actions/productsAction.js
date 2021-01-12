@@ -10,7 +10,7 @@ import {
 
 import Axios from 'axios'
 
-
+// product actions
 export const fetchProductRequest = () => {
     return {
         type: FETCH_PRODUCTS_REQUEST
@@ -30,7 +30,7 @@ export const fetchProductsFail = (error) => {
         payload: error
     }
 }
-
+// product detail actions
 export const fetchDetailRequest = (id) => {
     return {
         type: FETCH_DETAIL_REQUEST,
@@ -51,6 +51,10 @@ export const fetchDetailFail = (error) => {
         payload: error
     }
 }
+
+
+
+
 
 //fetch middleware
 

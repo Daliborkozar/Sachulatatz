@@ -2,6 +2,7 @@ import React from 'react'
 import {FaShoppingCart} from "@react-icons/all-files/fa/FaShoppingCart"
 import {FaHeart} from '@react-icons/all-files/fa/FaHeart'
 import Rating from '../Rating/Rating'
+import {Link} from 'react-router-dom'
 import classes from './Product.module.css'
 
 const Product = (props) => {
@@ -10,17 +11,17 @@ const Product = (props) => {
     return (
         <div>
             <div className="card" key={product._id}>
-              <a href={`/product/${product._id}`}>
+              <Link to={`/product/${product._id}`}>
                 <img
                   className="medium"
                   src={product.image}
                   alt={product.name}
                 />
-              </a>
+              </Link>
               <div className="cart-body">
-                <a href={`/product/${product._id}`}>
+                <Link to={`/product/${product._id}`}>
                   <h2>{product.name}</h2>
-                </a>
+                </Link>
             </div>
               <div className={classes.rating}>
                 <Rating rating={product.rating} numReviews = {product.numReviews}/>
