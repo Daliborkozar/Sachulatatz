@@ -81,4 +81,33 @@ img {
 .btn:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
+
+.rowMode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.singleWrap {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 10px;
+}

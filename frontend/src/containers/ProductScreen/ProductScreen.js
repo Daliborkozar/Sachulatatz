@@ -66,13 +66,13 @@ const ProductScreen = (props) => {
       <div className="card card-body">
         <ul>
           <li>
-            <div className="row">
+            <div className={classes.rowMode}>
               <div>Cena:</div>
               <div className="price">{currentProduct.price} rsd</div>
             </div>
           </li>
           <li>
-            <div className="row">
+            <div className={classes.rowMode}>
               <div>Stanje:</div>
               <div>
                 {currentProduct.countInStock > 0 ? (
@@ -84,8 +84,46 @@ const ProductScreen = (props) => {
             </div>
           </li>
           <li>
-              <button className={classes.btn}><span>Dodaj u korpu</span></button>
+            {currentProduct.countInStock > 0 && (
+              <form >
+                
+                <label>
+                  Velicina:
+                  <select>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                  </select>
+                </label>
+                
+                <label>
+                  Kolicina:
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="1">3</option>
+                    <option value="1">4</option>
+                    <option value="1">5</option>
+                    <option value="1">6</option>
+                  </select>
+                </label>
+                <input className={classes.btn} type="submit" value="Dodaj u korpu" />
+              </form>
+              // <div className={classes.rowMode}>
+              //   <label>Kol</label>
+
+              // </div>
+
+              // <li>
+              // <button className={classes.btn}><span>Dodaj u korpu</span></button>
+              // </li>
+              
+               
+            )}
           </li>
+          
         </ul>
       </div>
     </div>
