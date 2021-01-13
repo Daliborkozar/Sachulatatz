@@ -24,7 +24,12 @@ const CartScreen = (props) => {
         }
     },[dispatch,productId, qty,size])
 
-    const cartSumPrice = cartItem.reduce((acc,value) => acc + value.price, 0)
+    let cartSumQty = cartItem.reduce((prev, current) => {
+        return prev + current.qty * 1}, 0);
+    let cartSumPrice = cartItem.reduce((acc, value) => acc + value.price * value.qty, 0)
+    console.log(cartSumQty)
+
+    console.log(cartSumQty)
 
     const removeFromCartHandler= (id) => {
         //delete from cart
@@ -46,7 +51,7 @@ const CartScreen = (props) => {
                                MOJA KORPA:
                             </div>
                             <div>
-                               ({cartItem.length})PROIZVODA
+                               ({cartSumQty})PROIZVODA
                             </div>
                         </div>
                         { cartItem.length === 0 ? (
@@ -67,25 +72,26 @@ const CartScreen = (props) => {
                                                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                                                 </div>
                                                 <div>
-                                                    <select
+                                                   Velicina: {item.size}
+                                                    {/* <select
                                                         value={item.size}
                                                         onChange={ (e) => dispatch(
-                                                            addToCart(item.product),
-                                                            e.target.value
+                                                            addToCart(item.product, undefined, e.target.value)
                                                             )}
                                                     >
-                                                        <option value="s">S</option>
-                                                        <option value="m">M</option>
-                                                        <option value="l">L</option>
-                                                        <option value="xl">XL</option>
-                                                        <option value="xxl">XXL</option> 
-                                                    </select>
+                                                        <option value="S">S</option>
+                                                        <option value="M">M</option>
+                                                        <option value="L">L</option>
+                                                        <option value="XL">XL</option>
+                                                        <option value="XXL">XXL</option> 
+                                                    </select> */}
                                                 </div> 
                                                 <div>
                                                     <select
                                                         value={item.qty}
-                                                        onChange={e => dispatch(addToCart(item.product),
-                                                            Number(e.target.value))}
+                                                        onChange={e => dispatch(
+                                                            addToCart(item.product, Number(e.target.value))
+                                                        )}
                                                     >
                                                           {Array.from(Array(item.countInStock).keys()).map(x => (
                                                             <option key={x+1} value={x+1}>{x+1}</option>
@@ -114,7 +120,8 @@ const CartScreen = (props) => {
                     <div className={classes.Column2}>
                         <div>
                             <div>
-                                <h2>{`Ukupna cena za (${cartItem.length} proizvoda): ${cartSumPrice},00  rsd`}</h2>
+                                <h2>Ukupno za placanje  : 
+                                {cartSumPrice} rsd</h2>
                             </div>
                             <div>
                                 <button

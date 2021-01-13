@@ -25,7 +25,7 @@ export const addItems = (data,qty,size) => {
 
 
 //ADD and REMOVE ITEMS from cart
-export const addToCart = (productId, qty,size)=> async(dispatch, getState) => {
+export const addToCart = (productId,qty,size)=> async(dispatch, getState) => {
     const {data} = await Axios.get(`/api/products/${productId}`)
     dispatch(addItems(data,qty,size))
     localStorage.setItem('cartItem', JSON.stringify(getState().cart.cartItem))
