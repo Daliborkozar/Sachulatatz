@@ -48,10 +48,10 @@ const ProductScreen = (props) => {
   }else {
     detailsOfProduct = (
       <>
-      <Link to='/'>Back to results</Link>
+      
     <div className={classes.productcontainer}>
     <div className={classes.col2}>
-      <img src={currentProduct.image} alt={currentProduct.name}></img>
+      <img className={classes.imgBig} src={currentProduct.image} alt={currentProduct.name}></img>
     </div>
 
     <div className={classes.col1}>
@@ -127,8 +127,11 @@ const ProductScreen = (props) => {
           </li>
           
         </ul>
+        
       </div>
+      
     </div>
+    
   </div>
   </>
    )

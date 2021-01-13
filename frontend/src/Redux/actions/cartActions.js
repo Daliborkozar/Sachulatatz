@@ -17,8 +17,10 @@ export const addItems = (data,qty,size) => {
             product: data._id,
             qty,
             size,
-        }
+        },
+        
     }
+    
 }
 
 
@@ -26,4 +28,5 @@ export const addItems = (data,qty,size) => {
 export const addToCart = (productId, qty,size)=> async(dispatch, getState) => {
     const {data} = await Axios.get(`/api/products/${productId}`)
     dispatch(addItems(data,qty,size))
+    localStorage.setItem('cartItem', JSON.stringify(getState().cart.cartItem))
 }

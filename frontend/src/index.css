@@ -194,5 +194,15 @@ img.medium {
     color: #fbb72c;
 }
 
-/*Common*/
+/*Cart nav badge*/
+.badge {
+    position: relative;
+    top: -10px;
+    right: 12px;
+    padding: 1px 6px;
+    border-radius: 50%;
+    background: rgb(163, 65, 65);
+    color: white;
+}
+
 

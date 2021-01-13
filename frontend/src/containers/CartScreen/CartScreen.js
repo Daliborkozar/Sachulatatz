@@ -20,7 +20,11 @@ const CartScreen = (props) => {
   
     return (
         <div>
-            <h1>Cart screen</h1>
+            <h1>Vasa korpa</h1>
+            <div>
+                <label></label>
+
+            </div>
             <h2>Add to cart: {productId} quantity: {qty} size: {size}</h2>
         </div>
     )
