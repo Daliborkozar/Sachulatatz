@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/Rating/Rating";
-import {Link} from 'react-router-dom'
 import { fetchProductDetails } from "../../Redux/actions/productsAction";
 import classes from './ProductScreen.module.css'
 import Loader from '../../components/UI/Loader/Loader'

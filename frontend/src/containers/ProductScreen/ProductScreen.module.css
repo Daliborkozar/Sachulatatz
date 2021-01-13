@@ -34,7 +34,7 @@ li {
 
 .imgBig {
     padding: 1rem;
-    width: 90%;
+    max-width: 35rem;;
     border-radius: 2rem;
 }
 

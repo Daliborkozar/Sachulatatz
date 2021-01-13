@@ -1,0 +1,99 @@
+
+.pageWrapper{
+    margin: 15px;
+}
+
+.Row{
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 5rem;
+}
+
+.Column1{
+    flex: 2 1 50rem;
+    padding: 1rem; 
+    margin-top: 1rem;
+}
+
+.Column2{
+    flex: 1 1 25rem;
+    padding: 2rem;
+    margin-top: 1rem;
+    flex-basis: content;
+}
+
+.HeaderTitle {
+    display: flex;
+    justify-content: space-between; 
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.ProductList {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    align-items: center;
+    background-color: rgb(236, 228, 218);
+}
+
+.imgSmall {
+    padding: 1rem;
+    max-width: 6rem;
+    width: 100%;
+
+    border-radius: 2rem;
+}
+
+.min25 {
+    min-width: 25rem;
+}
+
+.Price {
+    min-width: 8rem;
+}
+
+.btn {
+    color: rgb(223, 219, 213);
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+.btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.btn:hover span {
+    padding-right: 25px;
+  }
+
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
