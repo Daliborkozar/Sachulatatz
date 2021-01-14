@@ -9,8 +9,9 @@ import MessageBox from '../../components/UI/Message/MessageBox'
 const CartScreen = (props) => {
     const dispatch = useDispatch()
     const search = useLocation().search
-    const qty= new URLSearchParams(search).get('qty')
+    const qtyString= new URLSearchParams(search).get('qty')
     const size = new URLSearchParams(search).get('size')
+    const qty = qtyString * 1
     
     const productId = props.match.params.id
     const cart = useSelector(state => state.cart)
@@ -90,7 +91,7 @@ const CartScreen = (props) => {
                                                     <select
                                                         value={item.qty}
                                                         onChange={e => dispatch(
-                                                            addToCart(item.product, Number(e.target.value))
+                                                            addToCart(item.product, Number(e.target.value),item.size)
                                                         )}
                                                     >
                                                           {Array.from(Array(item.countInStock).keys()).map(x => (

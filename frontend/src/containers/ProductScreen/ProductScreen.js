@@ -26,7 +26,7 @@ const ProductScreen = (props) => {
 
 
   const quatityhandler = (e) => {
-    setQty(e.target.value)
+    setQty(Number(e.target.value))
   }
 
   const sizeHandler = (e) => {
