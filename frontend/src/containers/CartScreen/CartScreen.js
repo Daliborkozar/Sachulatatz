@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
-import { addToCart} from '../../Redux/actions/cartActions'
+import { addToCart, removeFromCart} from '../../Redux/actions/cartActions'
 import classes from './CartScreen.module.css'
 import MessageBox from '../../components/UI/Message/MessageBox'
 
@@ -34,11 +34,11 @@ const CartScreen = (props) => {
 
     const removeFromCartHandler= (id) => {
         //delete from cart
-
+        dispatch(removeFromCart(id))
     }
 
     const checkoutHandler = () => {
-        
+        props.history.push('/signin?redirect=shipping')
     }
 
 
@@ -52,19 +52,19 @@ const CartScreen = (props) => {
                                MOJA KORPA:
                             </div>
                             <div>
-                               ({cartSumQty})PROIZVODA
+                               ({cartSumQty})PROIZVODA U KORPI
                             </div>
                         </div>
                         { cartItem.length === 0 ? (
                         <MessageBox>Nema proizvoda u korpi 
-                            <Link to='/'>Idi u Shopping</Link>
+                            <Link to='/'> Idi u Shopping</Link>
                         </MessageBox>) : (
                             <ul>
                                 {
                                     cartItem.map(item => (
                                         <li key={item.product}>
                                             <div className={classes.ProductList}>
-                                                <div>
+                                                <div className= {classes.min10}>
                                                     <img 
                                                         className={classes.imgSmall}
                                                         src={item.image} alt={item.name}/>
@@ -73,7 +73,7 @@ const CartScreen = (props) => {
                                                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                                                 </div>
                                                 <div>
-                                                   Velicina: {item.size}
+                                                   Vel: {item.size}
                                                     {/* <select
                                                         value={item.size}
                                                         onChange={ (e) => dispatch(
@@ -101,7 +101,7 @@ const CartScreen = (props) => {
                                                     
                                                 </div>
                                                 <div className={classes.Price}>
-                                                    {item.price} rsd
+                                                    {item.price}.00 rsd
                                                 </div>
                                                 <div>
                                                     <button
@@ -113,16 +113,22 @@ const CartScreen = (props) => {
                                         </li>
                                     ))
                                 }
+                                <div className={classes.backLink}>
+                                    <Link to='/'>Dodaj jos proizvoda</Link>
+                                </div>
                             </ul>
                         )}
+                        
                         
                     </div>
                     
                     <div className={classes.Column2}>
                         <div>
                             <div>
-                                <h2>Ukupno za placanje  : 
-                                {cartSumPrice} rsd</h2>
+                                <hr></hr>
+                                <h2>Ukupno za placanje:<br/>  
+                                {cartSumPrice}.00 rsd</h2>
+                                <hr></hr>
                             </div>
                             <div>
                                 <button

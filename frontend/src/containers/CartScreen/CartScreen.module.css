@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 0 5rem;
+    margin: 0 2rem;
 }
 
 .Column1{
@@ -41,16 +41,23 @@
     flex-direction: row;
     padding: 1rem 1rem;
     align-items: center;
+    flex-wrap:wrap;
     background-color: rgb(236, 228, 218);
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
 }
 
 .imgSmall {
     padding: 1rem;
+    
     max-width: 6rem;
     width: 100%;
 
     border-radius: 2rem;
+}
+
+.min10 {
+    min-width: 10rem;
+    
 }
 
 .min25 {
@@ -97,4 +104,12 @@
 .btn:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.backLink{
+    padding: 1rem 0.5rem;
+    background-color: bisque;
+    margin: 1rem 0;
+    text-align: center;
+    text-decoration: none;
 }
