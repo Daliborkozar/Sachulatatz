@@ -6,7 +6,8 @@ import {
 } from '../actions/types/types'
 
 const initialState = {
-    cartItem: localStorage.getItem('cartItem') ? JSON.parse(localStorage.getItem('cartItem')) : []
+    cartItem: localStorage.getItem('cartItem') ? JSON.parse(localStorage.getItem('cartItem')) : [] 
+    
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -27,7 +28,6 @@ const cartReducer = (state = initialState, action) => {
                 }
             }
         case CART_REMOVE_ITEM:
-
             return {
                 ...state,
                 cartItem: state.cartItem.filter(x => x.product !== action.payload)

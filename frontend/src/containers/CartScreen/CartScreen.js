@@ -56,7 +56,7 @@ const CartScreen = (props) => {
                             </div>
                         </div>
                         { cartItem.length === 0 ? (
-                        <MessageBox>Nema proizvoda u korpi 
+                        <MessageBox>Nema proizvoda u korpi {localStorage.clear()}
                             <Link to='/'> Idi u Shopping</Link>
                         </MessageBox>) : (
                             <ul>
