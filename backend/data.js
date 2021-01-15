@@ -1,23 +1,24 @@
 import bcrypt from 'bcryptjs'
 
+//remove ID - ID will be handled automaticaly by backend
+
 const data = {
     users: [
         {
             name: 'Dalibor',
-            email: 'admine@kada.com',
+            email: 'admin@example.com',
             password: bcrypt.hashSync('12345',8),
             isAdmin: true,
         },
         {
             name: 'Miroslav',
-            email: 'user@dada.com',
+            email: 'user@example.com',
             password: bcrypt.hashSync('12345',8),
             isAdmin: false,
         }
     ],
     products: [
         {
-            _id: '1',
             name: 'God Save The Queen',
             category: 'Shirts',
             image: '/images/slika1.jpg',
@@ -28,8 +29,7 @@ const data = {
             descpription: 'hight quality shirt',
             countInStock: 10
         },
-        {
-            _id: '2',
+        { 
             name: 'Kontroverzni poljoprivrednik',
             category: 'Shirts',
             image: '/images/slika2.jpg',
@@ -41,7 +41,6 @@ const data = {
             countInStock: 2
         },
         {
-            _id: '3',
             name: 'zemun',
             category: 'Shirts',
             image: '/images/slika3.jpg',
