@@ -3,6 +3,7 @@ import User from '../models/userModel.js'
 import data from '../data.js' // dont forget .js extension
 import bcrypt from 'bcryptjs'
 import expressAsyncHandler from 'express-async-handler'
+import { generateToken } from '../utils.js'
 
 
 //expresss.Router makes our code modular instead of having all routes in server.js

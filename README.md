@@ -21,7 +21,7 @@ TODO:
 ~~Implement Add and Remove from cart~~  
 Design singin screen  
 Create signin backend  
-Create users and Admin in mongoDB  
+~~Create users sample and Admin sample in mongoDB~~  
 Implement Sign in Actions  
 Create Shipping Screen with place order  
 Order History  

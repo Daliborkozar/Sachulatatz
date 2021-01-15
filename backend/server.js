@@ -2,8 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRoute.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
+app.use(express.json())
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/sachulatatz', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
