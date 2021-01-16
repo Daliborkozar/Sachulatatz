@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import classes from './SignInScreen.module.css'
+import profileLogo from '../../assets/loginLogo.png'
 
 const SignInScreen = () => {
     const [email, setEmail] = useState("")
@@ -21,8 +22,10 @@ const SignInScreen = () => {
     return (
         <div className={classes.mainContent}>
             
-            <form  onSubmit={submitHandler}>
+            <form  className={classes.Form} onSubmit={submitHandler}>
+                <img className={classes.logoP} src={profileLogo} alt="login logo" />
                 <h1>MOJ NALOG</h1>
+
                 <div>
                     <label htmlFor="email">Email adresa</label>
                     <input 
