@@ -120,7 +120,8 @@ const ProductScreen = (props) => {
                     ))}
                   </select>
                 </label>
-                <input className={classes.btn} type="submit" value="Dodaj u korpu" />
+                <label></label>
+                <button className={classes.btn} type="submit">Dodaj u korpu</button>
               </form>
             )}
           </li>
