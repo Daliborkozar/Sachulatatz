@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import {createStore,compose,applyMiddleware, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
+//REDUCERS
 import productsReducer from './Redux/reducers/productsReducer'
 import cartReducer from './Redux/reducers/cartReducer'
+import authReducer from './Redux/reducers/authReducer'
 import thunk from 'redux-thunk'
 
 const composeEnheancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const reducer = combineReducers({
   productList: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  auth: authReducer,
 })
 
 const store= createStore(

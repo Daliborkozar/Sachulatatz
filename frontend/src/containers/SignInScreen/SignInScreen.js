@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import classes from './SignInScreen.module.css'
 import profileLogo from '../../assets/loginLogo.png'
+import { useDispatch } from 'react-redux'
+import {signin} from '../../Redux/actions/authActions'
 
 const SignInScreen = () => {
+    const dispatch = useDispatch()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -17,6 +20,7 @@ const SignInScreen = () => {
 
     const submitHandler =(e) => {
         e.preventDefault()
+        dispatch(signin(email, password))
     }
 
     return (

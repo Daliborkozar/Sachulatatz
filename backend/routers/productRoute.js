@@ -12,7 +12,7 @@ productRouter.get('/', expressAsyncHandler(async(req,res) => {
 })
 )
 
-//BACKEND
+//ADD PRODUCTS TO BACKEND
 productRouter.get('/seed', expressAsyncHandler(async(req,res)=> {
     const createdProducts = await Product.insertMany(data.products)
     res.send({createdProducts})
