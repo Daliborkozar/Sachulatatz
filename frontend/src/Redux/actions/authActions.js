@@ -25,7 +25,8 @@ export const userSigninSuccess = (data) => {
 export const userSigninFail = (error) => {
     return{
         type: USER_SIGNIN_FAIL,
-        payload: error
+        payload: error.response && error.response.data.message ?
+        error.response.data.message : error.message
         }
     }
 
@@ -44,6 +45,6 @@ export const signin = (email,password) => async(dispatch) => {
         dispatch(userSigninSuccess(data))
         localStorage.setItem('userInfo', JSON.stringify(data))
     }catch(error){
-        dispatch(userSigninFail(error.message))
+        dispatch(userSigninFail(error))
     }
 }

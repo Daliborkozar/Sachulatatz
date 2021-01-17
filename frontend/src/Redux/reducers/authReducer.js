@@ -7,9 +7,10 @@ import {
 } from '../actions/types/types'
 
 const initialState = {
+    isLoggedIn: false,
     loading: false,
     error: "",
-    userInfo: {}
+    userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
     
 
 }
@@ -25,7 +26,8 @@ const authReducer = (state=initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                userInfo: action.payload
+                userInfo: action.payload,
+                isLoggedIn: true
             }
         case USER_SIGNIN_FAIL:
             return {

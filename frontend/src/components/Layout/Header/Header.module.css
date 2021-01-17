@@ -1,0 +1,7 @@
+span.UserIcon {
+    position: relative;
+    line-height: 1rem;
+   padding-right: 0.5rem;
+   color: rgb(86, 86, 99);
+   bottom: -0.2rem;
+}

@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { addToCart, removeFromCart} from '../../Redux/actions/cartActions'
 import classes from './CartScreen.module.css'
 import MessageBox from '../../components/UI/Message/MessageBox'
@@ -9,6 +9,8 @@ import MessageBox from '../../components/UI/Message/MessageBox'
 const CartScreen = (props) => {
     const dispatch = useDispatch()
     const search = useLocation().search
+    const history = useHistory()
+    console.log(search)
     const qtyString= new URLSearchParams(search).get('qty')
     const size = new URLSearchParams(search).get('size')
     const qty = qtyString * 1
@@ -38,7 +40,7 @@ const CartScreen = (props) => {
     }
 
     const checkoutHandler = () => {
-        props.history.push('/signin?redirect=shipping')
+        history.push('/signin?redirect=shipping')
     }
 
 

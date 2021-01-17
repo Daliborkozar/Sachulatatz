@@ -5,20 +5,18 @@ import { fetchProductDetails } from "../../Redux/actions/productsAction";
 import classes from './ProductScreen.module.css'
 import Loader from '../../components/UI/Loader/Loader'
 import MessageBox from '../../components/UI/Message/MessageBox'
+import { useHistory } from "react-router-dom";
 
-//TODO: Size selection based on available sizes
 
 const ProductScreen = (props) => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const productDetail = useSelector(state => state.productList)
   const { currentProduct, error, loading } = productDetail
   const [qty, setQty] = useState(1)
   const [size, setSize] = useState("S")
-  
-
-  
   const productId = props.match.params.id
-  console.log(productId)
+  
 
   useEffect(() => {
     dispatch(fetchProductDetails(productId))
@@ -35,7 +33,7 @@ const ProductScreen = (props) => {
 
   const addtoCartHandler =(e) => {
     e.preventDefault()
-    props.history.push(`/cart/${productId}?qty=${qty}&size=${size}`)
+    history.push(`/cart/${productId}?qty=${qty}&size=${size}`)
   }
   
   let detailsOfProduct = null
