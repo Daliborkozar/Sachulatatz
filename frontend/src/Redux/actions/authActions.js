@@ -31,11 +31,13 @@ export const userSigninFail = (error) => {
     }
 
 
-// export const userSignout = () => {
-//     return {
-//         type: USER_SIGNIN_SIGNOUT
-//     }
-// }
+export const userSignout = () => {
+    localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItems')
+    return {
+        type: USER_SIGNIN_SIGNOUT
+    }
+}
 
 
 export const signin = (email,password) => async(dispatch) => {

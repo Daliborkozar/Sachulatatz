@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link ,Redirect,useHistory, useLocation} from 'react-router-dom'
+import {Link ,useHistory, useLocation} from 'react-router-dom'
 
 import classes from './SignInScreen.module.css'
 import profileLogo from '../../assets/loginLogo.png'
@@ -16,7 +16,7 @@ const SignInScreen = () => {
     const [password, setPassword] = useState("")
     const auth = useSelector(state => state.auth)
     const {userInfo, error} = auth
-    console.log(history)
+    
 
     
     console.log(redirect)

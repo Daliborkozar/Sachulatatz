@@ -1,7 +1,31 @@
 span.UserIcon {
-    position: relative;
-    line-height: 1rem;
-   padding-right: 0.5rem;
-   color: rgb(86, 86, 99);
-   bottom: -0.2rem;
+  position: relative;
+  line-height: 1rem;
+  padding-right: 0.5rem;
+  color: rgb(86, 86, 99);
+  bottom: -0.2rem;
 }
+
+.DropDown {
+    display: inline-block;
+    position: relative;
+}
+
+.DropDownContent {
+    position: absolute;
+    display: none;
+    left: 2;
+    padding: 1rem;
+    min-width: 15rem;
+    z-index: 10;
+    background-color: #7e7a7a; 
+    margin: 0;
+    margin-top: 0.2rem;
+}
+
+.DropDown:hover .DropDownContent {
+    display: block;
+}
+
+
+

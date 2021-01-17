@@ -19,11 +19,16 @@ TODO:
 ~~Implement quantity choice by availability~~  
 ~~Build Cart Screen with the selection of products~~  
 ~~Implement Add and Remove from cart~~  
-Design singin screen  
-Create signin backend  
-~~Create users sample and Admin sample in mongoDB~~  
-Implement Sign in Actions  
+~~Design singin screen~~   
+~~Create signin backend~~    
+~~Create users sample and Admin sample in mongoDB~~    
+~~Implement Sign in Actions~~  
+Create modal for signout,orderhistory, profile page  
 Create Shipping Screen with place order  
-Order History  
+create place order Api
+Implement place order actions
+Order History
+Userprofile page
+
 
 

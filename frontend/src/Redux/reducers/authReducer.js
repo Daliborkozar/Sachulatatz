@@ -36,7 +36,9 @@ const authReducer = (state=initialState, action) => {
                 error: action.payload
             }
         case USER_SIGNIN_SIGNOUT:
-            return initialState
+            return {
+                initialState
+            }
         default: return state
     }
 }
