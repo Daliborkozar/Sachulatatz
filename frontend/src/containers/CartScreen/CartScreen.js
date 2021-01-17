@@ -74,18 +74,6 @@ const CartScreen = (props) => {
                                                 </div>
                                                 <div>
                                                    Vel: {item.size}
-                                                    {/* <select
-                                                        value={item.size}
-                                                        onChange={ (e) => dispatch(
-                                                            addToCart(item.product, undefined, e.target.value)
-                                                            )}
-                                                    >
-                                                        <option value="S">S</option>
-                                                        <option value="M">M</option>
-                                                        <option value="L">L</option>
-                                                        <option value="XL">XL</option>
-                                                        <option value="XXL">XXL</option> 
-                                                    </select> */}
                                                 </div> 
                                                 <div>
                                                     <select
