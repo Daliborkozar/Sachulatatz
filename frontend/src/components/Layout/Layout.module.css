@@ -1,0 +1,16 @@
+
+    .Main {
+        grid-area: main;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .gridContainer {
+        display: grid;
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: 10rem 1fr 10rem;
+        height: 100%;
+    }

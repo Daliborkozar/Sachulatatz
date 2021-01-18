@@ -34,6 +34,7 @@ export const userSigninFail = (error) => {
 export const userSignout = () => {
     localStorage.removeItem('userInfo')
     localStorage.removeItem('cartItems')
+    
     return {
         type: USER_SIGNIN_SIGNOUT
     }

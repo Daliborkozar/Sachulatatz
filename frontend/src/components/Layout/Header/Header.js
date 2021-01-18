@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/logo.jpg";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { FaCaretDown } from "@react-icons/all-files/fa/FaCaretDown";
 import classes from "./Header.module.css";
 import {userSignout} from '../../../Redux/actions/authActions'
 
@@ -19,7 +20,7 @@ const Header = () => {
   
 
   let cartitems = cartItem.length > 0 && (
-    <span className="badge">{cartItem.length}</span>
+    <span className="badge">{cartItem.length !==null ? cartItem.length : null}</span>
   );
 
   let userSigninInfo = userInfo ? (
@@ -27,6 +28,7 @@ const Header = () => {
     <Link to="#">
       <span className={classes.UserIcon}>{<FaUser />}</span>
       {userInfo.name}
+      <span className={classes.dropIcon}>{<FaCaretDown />}</span>
     </Link>
     <ul className={classes.DropDownContent}>
         <Link to='#singout' onClick={signoutHandler}>Sign Out</Link>
@@ -47,7 +49,7 @@ const Header = () => {
           <Link to="/">
             <img src={Logo} alt="logo" />
           </Link>
-          <Link to="/" className="brand fade-in">
+          <Link to="/" className={classes.brand}>
             Sachulatatz
           </Link>
         </div>

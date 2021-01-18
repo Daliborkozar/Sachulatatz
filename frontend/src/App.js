@@ -14,20 +14,16 @@ function App(){
   
   return (
     <BrowserRouter>
-    <div className="grid-container">
       <Layout>
       <main>
-        
         <Route path='/cart/:id?' component={CartScreen}></Route>
         <Route path="/product/:id" component={ProductScreen}></Route>
         <Route path='/shipping' component={ShippingScreen}></Route>
         <Route path='/signin' component={SignInScreen}></Route>
         <Route path='/' component={HomeScreen} exact></Route>
-        
-        
       </main>
       </Layout>
-    </div>
+    
     </BrowserRouter>
   );
 }

@@ -27,5 +27,45 @@ span.UserIcon {
     display: block;
 }
 
+header {
+    display: block;
+    grid-area: header;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #7e7a7a; 
+    align-items: center;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    z-index: 10;
+}
+
+header a {
+    padding: 1rem;
+    color: cornsilk;
+    padding: 1rem 1rem;
+}
+
+header img {
+        border-radius: 50%;
+        width: 80px;
+        vertical-align: middle
+}
+a.brand {
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: 'Sail', cursive;
+    color:#ECEBEB;
+}
+
+.dropIcon {
+    position: relative;
+    line-height: 1rem;
+    padding-right: 0.5rem;
+    color:#ECEBEB;
+    bottom: -0.3rem;
+}
+
+.dropIcon:hover {
+    
+}
 
 
