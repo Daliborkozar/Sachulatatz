@@ -55,6 +55,7 @@ userRouter.post('/register', expressAsyncHandler(async(res,req)=>{
         isAdmin: createdUser.isAdmin,
         token: generateToken(createdUser)
     })
+    
 }))
 
 export default userRouter

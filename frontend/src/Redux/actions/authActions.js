@@ -3,6 +3,9 @@ import {
     USER_SIGNIN_SUCCESS,
     USER_SIGNIN_FAIL, 
     USER_SIGNIN_SIGNOUT,
+    USER_REGISTER_REQUEST,
+    USER_REGISTER_SUCCESS,
+    USER_REGISTER_FAIL,
 
 } from '../actions/types/types'
 
@@ -15,6 +18,13 @@ export const userSigninRequest = (email,password) => {
     }
 }
 
+export const userRegisterRequest = (name,email,password) => {
+    return {
+        type: USER_REGISTER_REQUEST,
+        payload: {name,email,password}
+    }
+}
+
 export const userSigninSuccess = (data) => {
     return {
         type: USER_SIGNIN_SUCCESS,
@@ -22,9 +32,24 @@ export const userSigninSuccess = (data) => {
     }
 }
 
+export const userRegisterSuccess = (data) => {
+    return {
+        type: USER_REGISTER_SUCCESS,
+        payload: data
+    }
+}
+
 export const userSigninFail = (error) => {
     return{
         type: USER_SIGNIN_FAIL,
+        payload: error.response && error.response.data.message ?
+        error.response.data.message : error.message
+        }
+    }
+
+export const userRegisterFail = (error) => {
+    return{
+        type: USER_REGISTER_FAIL,
         payload: error.response && error.response.data.message ?
         error.response.data.message : error.message
         }
@@ -49,5 +74,17 @@ export const signin = (email,password) => async(dispatch) => {
         localStorage.setItem('userInfo', JSON.stringify(data))
     }catch(error){
         dispatch(userSigninFail(error))
+    }
+}
+
+export const register = (name,email,password) => async(dispatch) => {
+    dispatch(userRegisterRequest(name,email,password))
+    try{
+        const {data} = await Axios.post('/api/users/register',{name,email, password})
+        dispatch(userRegisterSuccess(data))
+        dispatch(userSigninSuccess(data))
+        localStorage.setItem('userInfo', JSON.stringify(data))
+    }catch(error){
+        dispatch(userRegisterFail(error))
     }
 }

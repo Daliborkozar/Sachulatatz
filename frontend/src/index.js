@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import {createStore,compose,applyMiddleware, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
+import axios from 'axios'
 //REDUCERS
 import productsReducer from './Redux/reducers/productsReducer'
 import cartReducer from './Redux/reducers/cartReducer'
 import authReducer from './Redux/reducers/authReducer'
 import thunk from 'redux-thunk'
+
+
+
 
 const composeEnheancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
@@ -22,6 +26,22 @@ const store= createStore(
   reducer,
   composeEnheancer(applyMiddleware(thunk))
 )
+
+
+axios.interceptors.request.use(request=> {
+  console.log(request)
+  return request
+},error => {
+  console.log(error)
+  return Promise.reject(error)
+})
+
+axios.interceptors.response.use(response => {
+  console.log(response)
+  return response
+},error => {
+  return Promise.reject(error)
+})
 
 ReactDOM.render(
   <React.StrictMode>
