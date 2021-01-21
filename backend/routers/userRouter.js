@@ -21,7 +21,9 @@ userRouter.get('/seed', expressAsyncHandler(async (req,res) =>{
 )
 
 //signin post request
-userRouter.post('/signin', expressAsyncHandler(async(req,res) => {
+userRouter.post(
+    '/signin', 
+    expressAsyncHandler(async(req,res) => {
     const user = await User.findOne({email: req.body.email}) //
     if(user){
         //user entered password and pass in database     
@@ -41,21 +43,23 @@ userRouter.post('/signin', expressAsyncHandler(async(req,res) => {
 )
 
 //new user post request
-userRouter.post('/register', expressAsyncHandler(async(res,req)=>{
-    const user = new User({
+userRouter.post(
+    '/register',
+    expressAsyncHandler(async (req, res) => {
+      const user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 8),
-    })
-    const createdUser = await user.save()
-    res.send({
+        password: bcrypt.hashSync(req.body.password,12),
+      });
+      const createdUser = await user.save();
+      res.send({
         _id: createdUser._id,
         name: createdUser.name,
         email: createdUser.email,
         isAdmin: createdUser.isAdmin,
-        token: generateToken(createdUser)
+        token: generateToken(createdUser),
+      });
     })
-    
-}))
+  );
 
 export default userRouter

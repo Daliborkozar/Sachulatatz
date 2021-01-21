@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {register} from '../../Redux/actions/authActions'
 import MessageBox from '../../components/UI/Message/MessageBox'
 
-const RegisterScreen = () => {
+const RegisterScreen = (props) => {
     const search = useLocation().search
     const redirect = search ? new URLSearchParams(search).get('redirect') : '/' 
     const history = useHistory() 
@@ -18,8 +18,8 @@ const RegisterScreen = () => {
     const [name, setName] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const auth = useSelector(state => state.auth)
-    const {userInfo, error} = auth
+    const userRegister = useSelector(state => state.register)
+    const {userInfo, error} = userRegister
     
 
     
@@ -46,7 +46,7 @@ const RegisterScreen = () => {
         if(password !== confirmPassword){
             alert('Passwords do not match // Potrvdjena lozinka je neispravna')
         }else {
-            dispatch(register(name,email, password))
+            dispatch(register(name,email,password))
         }
         
     }

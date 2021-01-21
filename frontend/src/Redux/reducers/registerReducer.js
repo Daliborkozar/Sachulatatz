@@ -5,7 +5,10 @@ import {
 }
 from '../actions/types/types'
 
-const initialState = {}
+const initialState = {
+    
+    
+}
 
 const registerReducer = (state=initialState, action) => {
     switch(action.type){ 
@@ -18,7 +21,7 @@ const registerReducer = (state=initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                userRegister: action.payload,
+                userInfo: action.payload,
             }
         case USER_REGISTER_FAIL:
             return {

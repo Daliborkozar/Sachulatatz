@@ -10,6 +10,7 @@ import productsReducer from './Redux/reducers/productsReducer'
 import cartReducer from './Redux/reducers/cartReducer'
 import authReducer from './Redux/reducers/authReducer'
 import thunk from 'redux-thunk'
+import registerReducer from './Redux/reducers/registerReducer';
 
 
 
@@ -20,6 +21,7 @@ const reducer = combineReducers({
   productList: productsReducer,
   cart: cartReducer,
   auth: authReducer,
+  register: registerReducer
 })
 
 const store= createStore(
@@ -28,20 +30,20 @@ const store= createStore(
 )
 
 
-axios.interceptors.request.use(request=> {
-  console.log(request)
-  return request
-},error => {
-  console.log(error)
-  return Promise.reject(error)
-})
+// axios.interceptors.request.use(request=> {
+//   console.log(request)
+//   return request
+// },error => {
+//   console.log(error)
+//   return Promise.reject(error)
+// })
 
-axios.interceptors.response.use(response => {
-  console.log(response)
-  return response
-},error => {
-  return Promise.reject(error)
-})
+// axios.interceptors.response.use(response => {
+//   console.log(response)
+//   return response
+// },error => {
+//   return Promise.reject(error)
+// })
 
 ReactDOM.render(
   <React.StrictMode>

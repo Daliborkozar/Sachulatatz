@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     password: {type: String, required: true},
     isAdmin: { type: String, default: false}
 },{
-    //2 options
+//2 options
     timestamps: true // time stamps for records
 })
 

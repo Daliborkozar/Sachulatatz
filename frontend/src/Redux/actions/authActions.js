@@ -14,14 +14,14 @@ import Axios from 'axios'
 export const userSigninRequest = (email,password) => {
     return{
         type: USER_SIGNIN_REQUEST,
-        payload: {email , password}
+        payload: {email,password}
     }
 }
 
-export const userRegisterRequest = (name,email,password) => {
+export const userRegisterRequest = () => {
     return {
         type: USER_REGISTER_REQUEST,
-        payload: {name,email,password}
+        payload: {}
     }
 }
 
@@ -65,9 +65,21 @@ export const userSignout = () => {
     }
 }
 
+export const register = (name,email,password) => async(dispatch) => {
+    dispatch(userRegisterRequest(email,password))
+    try{
+        const {data} = await Axios.post('/api/users/register',{ name,email, password})
+        console.log(data)
+        dispatch(userRegisterSuccess(data))
+        dispatch(userSigninSuccess(data))
+        localStorage.setItem('userInfo', JSON.stringify(data))
+    }catch(error){
+        dispatch(userRegisterFail(error))
+    }
+}
 
 export const signin = (email,password) => async(dispatch) => {
-    dispatch(userSigninRequest(email,password))
+    dispatch(userSigninRequest())
     try{
         const {data} = await Axios.post('/api/users/signin',{email, password})
         dispatch(userSigninSuccess(data))
@@ -77,14 +89,3 @@ export const signin = (email,password) => async(dispatch) => {
     }
 }
 
-export const register = (name,email,password) => async(dispatch) => {
-    dispatch(userRegisterRequest(name,email,password))
-    try{
-        const {data} = await Axios.post('/api/users/register',{name,email, password})
-        dispatch(userRegisterSuccess(data))
-        dispatch(userSigninSuccess(data))
-        localStorage.setItem('userInfo', JSON.stringify(data))
-    }catch(error){
-        dispatch(userRegisterFail(error))
-    }
-}
