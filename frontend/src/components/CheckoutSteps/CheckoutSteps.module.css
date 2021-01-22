@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 50%;
+   
+
+}
+
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    height: 5rem;
+    border: 5px solid #7d7d7d;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 5rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: rgb(189, 184, 184);
+    align-items: center;
+}
+
+.progressBar span {
+    width: 10rem;
+    
+}
+
+
+
+.active {
+    border: 6px solid #74e074;
+    background-color: #fbfffb;
+   
+}
+
+
+
+.line {
+    position: relative;
+    flex: 1;
+    height: 3px;
+    background: rgb(189, 184, 184);
+    top: 3.8rem;
+  }
+
+
+
+
+  
+

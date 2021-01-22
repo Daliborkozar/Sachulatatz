@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import {createStore,compose,applyMiddleware, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
-import axios from 'axios'
+//import axios from 'axios'
 //REDUCERS
 import productsReducer from './Redux/reducers/productsReducer'
 import cartReducer from './Redux/reducers/cartReducer'

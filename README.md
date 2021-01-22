@@ -31,7 +31,7 @@ Implement place order actions
 Order History
 Userprofile page
 Product search
-Add debouncing
+Add debouncing for product search
 
 
 

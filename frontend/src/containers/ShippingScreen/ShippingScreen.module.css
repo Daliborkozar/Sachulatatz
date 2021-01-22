@@ -1,0 +1,36 @@
+.Form {
+    margin: 10rem auto;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px 25px;
+    background-color: #f8f8f8;
+    outline-color: #719ECE;
+    border: 1px solid #c4c1c1;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 3px 12px -3px #000000; 
+box-shadow: 5px 3px 12px -3px #000000;
+}
+
+.btn {
+    
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(#4CAF50, #72be7c);
+    color: #ffffff;
+    transform: scale(1);
+    transition: transform 500ms;
+    
+}
+
+.btn:hover {
+    color: #e2dddd;
+    transform: scale(1.1);
+
+}

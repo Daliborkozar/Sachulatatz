@@ -1,6 +1,7 @@
 
 import {
     CART_ADD_ITEM,
+    CART_ADD_SHIPPING_ADDRESS,
     CART_REMOVE_ITEM
 
 } from '../actions/types/types'
@@ -32,6 +33,11 @@ const cartReducer = (state = initialState, action) => {
                 ...state,
                 cartItem: state.cartItem.filter(x => x.product !== action.payload)
 
+            }
+        case CART_ADD_SHIPPING_ADDRESS:
+            return {
+                ...state,
+                shippingAddress: action.payload
             }
             default:
                 return state

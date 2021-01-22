@@ -1,6 +1,7 @@
 import {
     CART_ADD_ITEM,
-    CART_REMOVE_ITEM
+    CART_REMOVE_ITEM,
+    CART_ADD_SHIPPING_ADDRESS,
 
 } from '../actions/types/types'
 
@@ -31,6 +32,13 @@ export const removeItems = (productId) => {
 }
 
 
+export const addShipping = (data) =>{
+    return {
+        type: CART_ADD_SHIPPING_ADDRESS,
+        payload: data
+    }
+}
+
 //ADD and REMOVE ITEMS from cart
 export const addToCart = (productId,qty,size)=> async(dispatch, getState) => {
     const {data} = await Axios.get(`/api/products/${productId}`)
@@ -41,5 +49,10 @@ export const addToCart = (productId,qty,size)=> async(dispatch, getState) => {
 export const removeFromCart = (productId) => async(dispatch, getState) => {
     dispatch(removeItems(productId))
     localStorage.setItem('cartItem', JSON.stringify(getState().cart.item))
+}
+
+export const saveShippingAddress = (data) => (dispatch) =>{
+    dispatch(addShipping(data))
+    localStorage.setItem('shippingAddress', JSON.stringify(data))
 }
 
