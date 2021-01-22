@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps'
 import classes from './ShippingScreen.module.css'
 import {saveShippingAddress} from '../../Redux/actions/cartActions'
 import { useHistory } from 'react-router-dom'
 
 const ShippingScreen = () => {
+    const userSignedIn = useSelector(state => state.auth)
+    const {userInfo} = userSignedIn
     const dispatch = useDispatch()
     const history = useHistory() 
     const [fullName,setFullName] = useState('')
@@ -13,7 +15,9 @@ const ShippingScreen = () => {
     const [postalCode, setPostalCode] = useState('')
     const [phone, setPhone] = useState('')
 
-    
+    if(!userInfo) {
+        history.push('/signin')
+    }
 
     const nameHandler = (e) => {
         setFullName(e.target.value)
@@ -50,6 +54,7 @@ const ShippingScreen = () => {
                         id="fullName"
                         placeholder="Ime i Prezime"
                         value={fullName}
+                        required
                         onChange={nameHandler}
                     />
                 </div>
@@ -60,6 +65,7 @@ const ShippingScreen = () => {
                         id="adress"
                         placeholder="Adresa"
                         value={address}
+                        required
                         onChange={addressHandler}
                     />
                 </div>
@@ -71,6 +77,7 @@ const ShippingScreen = () => {
                         id="postalCode"
                         placeholder="Postanski broj"
                         value={postalCode}
+                        required
                         onChange={postalCodeHandler}
                     />
                 </div>
@@ -81,6 +88,7 @@ const ShippingScreen = () => {
                         id="phone"
                         placeholder="Broj Telefona"
                         value={phone}
+                        required
                         onChange={phoneHandler}
                     />
                 </div>

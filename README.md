@@ -23,15 +23,17 @@ TODO:
 ~~Create signin backend~~    
 ~~Create users sample and Admin sample in mongoDB~~    
 ~~Implement Sign in Actions~~  
-Add axios interceptors
-Create modal for signout,orderhistory, profile page  
-Create Shipping Screen with place order  
-create place order Api
-Implement place order actions
-Order History
-Userprofile page
-Product search
-Add debouncing for product search
+Add axios interceptors  
+Create modal for signout,orderhistory, profile page    
+Create Shipping Screen with place order    
+create place order Api  
+Implement place order actions  
+Order History  
+Userprofile page  
+Product search  
+Add debouncing for product search  
+Make a button component and refactor code  
+
 
 
 

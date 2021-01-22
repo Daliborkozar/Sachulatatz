@@ -46,16 +46,26 @@ li {
 }
 
 .btn {
-    color: rgb(223, 219, 213);
-    display: block;
+    
     width: 100%;
-    border: none;
-    background-color: #4CAF50;
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 0;
     cursor: pointer;
-    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(#4CAF50, #72be7c);
+    color: #ffffff;
+    transform: scale(1);
+    transition: transform 500ms;
+    
+}
+
+.btn:hover {
+    color: #e2dddd;
+    transform: scale(1.05);
+
 }
 
 .btn span {
