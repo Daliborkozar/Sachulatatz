@@ -7,7 +7,8 @@ import {
 } from '../actions/types/types'
 
 const initialState = {
-    cartItem: localStorage.getItem('cartItem') ? JSON.parse(localStorage.getItem('cartItem')) : []
+    cartItem: localStorage.getItem('cartItem') ? JSON.parse(localStorage.getItem('cartItem')) : [],
+    shippingAddress: {}
     
 }
 

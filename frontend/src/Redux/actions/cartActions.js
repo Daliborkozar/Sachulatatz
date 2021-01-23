@@ -20,8 +20,7 @@ export const addItems = (data,qty,size) => {
             size,
         },
         
-    }
-    
+    } 
 }
 
 export const removeItems = (productId) => {

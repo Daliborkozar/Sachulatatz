@@ -2,11 +2,11 @@
     display: flex;
     align-items: center;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 0 5rem;
+    margin: 0 15rem;
 }
 
 .col1 {
@@ -16,7 +16,7 @@
 
 .col2 {
     
-    flex: 1 1 50rem;
+    flex: 2 1 50rem;
     text-align: center;
     margin-top: 1rem;
 }
@@ -33,7 +33,7 @@ li {
 
 .imgBig {
     padding: 1rem;
-    max-width: 35rem;;
+    width: 70%;
     border-radius: 2rem;
 }
 
