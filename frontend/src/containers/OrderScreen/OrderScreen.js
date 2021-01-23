@@ -16,15 +16,16 @@ const OrderScreen = () => {
             <CheckoutSteps step1 step2 step3 />
             <div className={classes.OrderContainer}>
                 <div className={classes.col2}>
-                    <div><h2>Dostava</h2>
+                    <div className={classes.BoxShadow}>
+                        <h2>Dostava</h2>
                     <ul>
-                        <li>Ime: {cart.shippingAddress.fullName}</li>
-                        <li>Adresa:{cart.shippingAddress.address}</li>
-                        <li>Postanski broj: {cart.shippingAddress.postalCode}</li>
-                        <li>Broj Telefona: {cart.shippingAddress.phone}</li>
+                        <li><strong>Ime:</strong> {cart.shippingAddress.fullName}</li>
+                        <li><strong>Adresa:</strong> {cart.shippingAddress.address}</li>
+                        <li><strong>Postanski broj:</strong> {cart.shippingAddress.postalCode}</li>
+                        <li><strong>Broj Telefona:</strong> {cart.shippingAddress.phone}</li>
                     </ul>
                     </div>
-                    <div>
+                    <div className={classes.BoxShadow}>
                         <h2>Nacin Placanja</h2>
                         <p>Pouzecem, Kurirska sluzba</p>
                     </div>
@@ -53,7 +54,7 @@ const OrderScreen = () => {
                         </ul>
                     </div>
                 </div>
-                <div className={classes.col1}>
+                <div className={classes.column1}>
                     <div>
                         <h2>Vasa Korpa</h2>
                         <ul>
@@ -68,7 +69,7 @@ const OrderScreen = () => {
                             </li>
                         </ul>
                         <button className={classes.btn}>Zavrsi Porudzbinu</button>
-                        <p>*Cena dostave zavisi od tarife kurirskih sluzbi</p>
+                        <p className={classes.backLink}>*Cena dostave zavisi od tarife kurirskih sluzbi</p>
                     </div>
                 </div>
             </div>
