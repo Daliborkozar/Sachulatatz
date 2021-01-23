@@ -18,3 +18,59 @@
     flex: 2 1 50rem;
     margin-top: 1rem;
 }
+
+.imgSmall {
+    padding: 1rem;
+    max-width: 6rem;
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.min10 {
+    min-width: 10rem;
+}
+
+.min25 {
+    min-width: 25rem;
+}
+
+.ProductList {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    align-items: center;
+    flex-wrap:wrap;
+    background-color: rgb(236, 228, 218);
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+}
+
+.btn {
+    
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(#4CAF50, #72be7c);
+    color: #ffffff;
+    transform: scale(1);
+    transition: transform 500ms;
+    
+}
+
+.btn:hover {
+    color: #e2dddd;
+    transform: scale(1.05);
+
+}
+
+.rowMode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

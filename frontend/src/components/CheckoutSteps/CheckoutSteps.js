@@ -1,8 +1,13 @@
 import React from 'react'
 import classes from './CheckoutSteps.module.css'
+import {FaCheckCircle} from '@react-icons/all-files/fa/FaCheckCircle'
+
 
 const CheckoutSteps = (props) => {
+    
+
     return (
+    
         <section className={classes.container}>
         <div className={`${classes.progressBar} ${props.step1 ? classes.active : ""}`}>1<span>prijava</span></div>
         <div className={classes.line}></div>

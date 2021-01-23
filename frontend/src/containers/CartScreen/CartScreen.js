@@ -76,7 +76,7 @@ const CartScreen = (props) => {
                                                 </div>
                                                 <div>
                                                    Vel: {item.size}
-                                                </div> 
+</div> 
                                                 <div>
                                                     <select
                                                         value={item.qty}
