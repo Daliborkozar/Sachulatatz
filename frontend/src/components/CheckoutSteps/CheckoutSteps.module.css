@@ -32,8 +32,7 @@
 
 .active {
     border: 6px solid #74e074;
-    background-color: #fbfffb;
-   
+    background-color: #fbfffb; 
 }
 
 
@@ -44,7 +43,11 @@
     height: 3px;
     background: rgb(189, 184, 184);
     top: 3.8rem;
-  }
+}
+
+.activeLine {
+    background: #74e074;
+}
 
 
 

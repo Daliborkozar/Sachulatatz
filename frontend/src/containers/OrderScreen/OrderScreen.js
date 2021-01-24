@@ -59,12 +59,18 @@ const OrderScreen = () => {
                         <h2>Vasa Korpa</h2>
                         <ul>
                             <li className={classes.rowMode}>
-                                <div>Proizvoda:</div>
+                                <div>Broj Proizvoda:</div>
                                 <div>{cartSumQty}</div>
                             </li>
+                            <li className={classes.rowMode}>
+                                <div>Cena Proizvoda:</div>
+                                <div>{cartSumPrice}</div>
+                            </li>
                             <li className={classes.rowMode}>Dostava</li>
+                            <hr/>
                             <li className={classes.rowMode}>
                                <div>*Ukupno za placanje:</div>
+                               
                                <div>{cartSumPrice},00 rsd</div>  
                             </li>
                         </ul>
