@@ -2,10 +2,17 @@ import {
     CART_ADD_ITEM,
     CART_REMOVE_ITEM,
     CART_ADD_SHIPPING_ADDRESS,
+    CART_EMPTY,
 
 } from '../actions/types/types'
 
 import Axios from 'axios'
+
+export const cartEmpty = () => {
+    return {
+        type: CART_EMPTY,
+    }
+}
 
 export const addItems = (data,qty,size) => {
     return {

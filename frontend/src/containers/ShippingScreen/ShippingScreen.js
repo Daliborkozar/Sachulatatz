@@ -82,7 +82,7 @@ const ShippingScreen = () => {
                     />
                 </div>
                 <div>
-                    <lavel htmlFor="phone">Telefon</lavel>
+                    <label htmlFor="phone">Telefon</label>
                     <input
                         type="text"
                         id="phone"

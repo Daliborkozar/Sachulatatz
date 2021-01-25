@@ -64,7 +64,7 @@ const CartScreen = (props) => {
                             <ul>
                                 {
                                     cartItem.map(item => (
-                                        <li key={item.product}>
+                                        <li key={item._id}>
                                             <div className={classes.ProductList}>
                                                 <div className= {classes.min10}>
                                                     <img 

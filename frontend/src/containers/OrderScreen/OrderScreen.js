@@ -1,16 +1,37 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps'
+import Loader from '../../components/UI/Loader/Loader'
+import MessageBox from '../../components/UI/Message/MessageBox'
+import { createOrder, orderReset } from '../../Redux/actions/orderActions'
 import classes from './OrderScreen.module.css'
 
 
 const OrderScreen = () => {
     const cart = useSelector(state => state.cart)
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const orderCreate = useSelector(state => state.orderCreate)
+    const {loading, success, error, order} = orderCreate
 
     let cartSumQty = cart.cartItem.reduce((prev, current) => {
         return prev + current.qty * 1}, 0);
     let cartSumPrice = cart.cartItem.reduce((acc, value) => acc + value.price * value.qty, 0)
+
+    const placeOrderHandler = () => {
+       
+        dispatch(createOrder({...cart, order: cart.cartItem}))
+    }
   
+    // useEffect(()=> {
+    //     //redirect to order details page
+    //     if(success) {
+    //         history.push(`/order/${order._id}`)
+    //         dispatch(orderReset())
+    //     }
+    // },[dispatch, history, order, success])
+
     return (
         <div>
             <CheckoutSteps step1 step2 step3 />
@@ -33,7 +54,7 @@ const OrderScreen = () => {
                         <h2>Proizvodi</h2>
                         <ul>
                                 {cart.cartItem.map(item => (
-                                    <li className={classes.ProductList}>
+                                    <li key={item._id}className={classes.ProductList}>
                                     <div className={classes.min10}>
                                         <img className={classes.imgSmall} src={item.image} alt={item.name}/>
                                     </div>
@@ -78,9 +99,13 @@ const OrderScreen = () => {
                                <div>{cartSumPrice},00 rsd</div>  
                             </li>
                         </ul>
-                        <button className={classes.btn}>Završi Porudžbinu</button>
+                        <button 
+                        onClick={placeOrderHandler}
+                        className={classes.btn}>Završi Porudžbinu</button>
                         <p className={classes.backLink}>*Cena dostave zavisi od tarife kurirskih službi</p>
                         <p className={classes.backLink}>*Besplatna dostava za porudžbine preko 3000 rsd</p>
+                        {/* { loading && <Loader /> }
+                        { error && <MessageBox>{error}</MessageBox> } */}
                     </div>
                 </div>
             </div>
