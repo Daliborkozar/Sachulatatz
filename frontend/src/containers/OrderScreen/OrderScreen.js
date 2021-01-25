@@ -21,13 +21,13 @@ const OrderScreen = () => {
                     <ul>
                         <li><strong>Ime:</strong> {cart.shippingAddress.fullName}</li>
                         <li><strong>Adresa:</strong> {cart.shippingAddress.address}</li>
-                        <li><strong>Postanski broj:</strong> {cart.shippingAddress.postalCode}</li>
+                        <li><strong>Poštanski broj:</strong> {cart.shippingAddress.postalCode}</li>
                         <li><strong>Broj Telefona:</strong> {cart.shippingAddress.phone}</li>
                     </ul>
                     </div>
                     <div className={classes.BoxShadow}>
-                        <h2>Nacin Placanja</h2>
-                        <p>Pouzecem, Kurirska sluzba</p>
+                        <h2>Nacin Plaćanja</h2>
+                        <p>Pouzećem, Kurirska služba</p>
                     </div>
                     <div>
                         <h2>Proizvodi</h2>
@@ -56,7 +56,7 @@ const OrderScreen = () => {
                 </div>
                 <div className={classes.column1}>
                     <div>
-                        <h2>Vasa Korpa</h2>
+                        <h2>Vaša Korpa</h2>
                         <ul>
                             <li className={classes.rowMode}>
                                 <div>Broj Proizvoda:</div>
@@ -66,16 +66,21 @@ const OrderScreen = () => {
                                 <div>Cena Proizvoda:</div>
                                 <div>{cartSumPrice}</div>
                             </li>
-                            <li className={classes.rowMode}>Dostava</li>
+                            <li className={classes.rowMode}>
+                                <div>*Dostava</div>
+                                <div>{cartSumPrice >=3000 ? "Besplatna" : "post express tarifa"}</div>
+                                
+                            </li>
                             <hr/>
                             <li className={classes.rowMode}>
-                               <div>*Ukupno za placanje:</div>
+                               <div>*Ukupno za plaćanje:</div>
                                
                                <div>{cartSumPrice},00 rsd</div>  
                             </li>
                         </ul>
-                        <button className={classes.btn}>Zavrsi Porudzbinu</button>
-                        <p className={classes.backLink}>*Cena dostave zavisi od tarife kurirskih sluzbi</p>
+                        <button className={classes.btn}>Završi Porudžbinu</button>
+                        <p className={classes.backLink}>*Cena dostave zavisi od tarife kurirskih službi</p>
+                        <p className={classes.backLink}>*Besplatna dostava za porudžbine preko 3000 rsd</p>
                     </div>
                 </div>
             </div>

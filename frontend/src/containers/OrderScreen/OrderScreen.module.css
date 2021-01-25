@@ -42,8 +42,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
     align-items: center;
+    margin-right: 1rem;
     flex-wrap:wrap;
     background-color: rgb(236, 228, 218);
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
@@ -91,4 +92,10 @@
     margin: 1rem 0;
     text-align: left;
     text-decoration: none;
+}
+
+@media (max-width: 1088px) {
+    .column1{
+        margin-top: 1rem;
+    }
 }

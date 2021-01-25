@@ -97,14 +97,14 @@ const CartScreen = (props) => {
                                                     <button
                                                         type="button"
                                                         onClick={() => removeFromCartHandler(item.product)}
-                                                    >Obrisi</button>
+                                                    >Obriši</button>
                                                 </div>
                                              </div>
                                         </li>
                                     ))
                                 }
                                 <div className={classes.backLink}>
-                                    <Link to='/'>Dodaj jos proizvoda</Link>
+                                    <Link to='/'>Dodaj još proizvoda</Link>
                                 </div>
                             </ul>
                         )}
