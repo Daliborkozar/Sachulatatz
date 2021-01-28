@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema({
     orderItem: [{
-        Image: {type: String},
+        image: {type: String},
         name: {type: String},
         size: {type: String},
         qty: {type: Number},

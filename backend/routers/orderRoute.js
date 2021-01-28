@@ -10,9 +10,9 @@ orderRouter.post(
     '/',
     isAuth,//middleware call before 
     expressAsyncHandler(async(req, res)=> {
-    // if(req.body.orderItem.length === 0) {
-    //     res.status(400).send({ message: 'Korpa je prazna'})
-    // }else {
+    if(req.body.orderItem.length === 0) {
+        res.status(400).send({ message: 'Korpa je prazna'})
+    }else {
         const order = new Orders({
             orderItem: req.body.orderItem,
             shippingAddress: req.body.shippingAddress,
@@ -27,7 +27,7 @@ orderRouter.post(
             .send({message: 'New Order Created', order: createOrder}) //pass order to FE
     }
     
-//}
+}
 ))
 
 

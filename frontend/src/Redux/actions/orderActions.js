@@ -26,9 +26,11 @@ export const orderSuccess = (data) => {
 export const orderFail = (error) => {
     return {
         type: ORDER_FAIL,
-        payload: error.response && error.response.data.message ?
-        error.response.data.message
-        : error.message
+        payload: error.message
+        // error.response && error.response.data.message ?
+        // error.response.data.message
+        // : 
+        
 
     }
 }

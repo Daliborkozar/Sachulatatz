@@ -35,7 +35,8 @@ const ShippingScreen = () => {
         setPhone(e.target.value)
     }
 
-    const submitHandler = () => {
+    const submitHandler = (e) => {
+        e.preventDefault()
         //TODO submit shipping address dispatch
         dispatch(saveShippingAddress({fullName,address,postalCode,phone}))
         history.push('/order')
@@ -48,7 +49,7 @@ const ShippingScreen = () => {
                     <h1>Adresa za isporuku</h1>
                 </div>
                 <div>
-                    <lavel htmlFor="fullName">Ime i Prezime</lavel>
+                    <label htmlFor="fullName">Ime i Prezime</label>
                     <input
                         type="text"
                         id="fullName"
@@ -59,7 +60,7 @@ const ShippingScreen = () => {
                     />
                 </div>
                 <div>
-                    <lavel htmlFor="adress">Adresa i broj</lavel>
+                    <label htmlFor="adress">Adresa i broj</label>
                     <input
                         type="text"
                         id="adress"
@@ -71,7 +72,7 @@ const ShippingScreen = () => {
                 </div>
                
                 <div>
-                    <lavel htmlFor="postalCode">Postanski broj</lavel>
+                    <label htmlFor="postalCode">Postanski broj</label>
                     <input
                         type="text"
                         id="postalCode"

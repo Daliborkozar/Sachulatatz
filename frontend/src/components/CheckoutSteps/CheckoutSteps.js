@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './CheckoutSteps.module.css'
-import {FaCheckCircle} from '@react-icons/all-files/fa/FaCheckCircle'
+
 
 
 const CheckoutSteps = (props) => {

@@ -14,23 +14,27 @@ const OrderScreen = () => {
     const dispatch = useDispatch()
     const orderCreate = useSelector(state => state.orderCreate)
     const {loading, success, error, order} = orderCreate
+    
 
     let cartSumQty = cart.cartItem.reduce((prev, current) => {
-        return prev + current.qty * 1}, 0);
+        return prev + current.qty * 1
+        }, 0);
     let cartSumPrice = cart.cartItem.reduce((acc, value) => acc + value.price * value.qty, 0)
 
     const placeOrderHandler = () => {
-       
-        dispatch(createOrder({...cart, order: cart.cartItem}))
+        dispatch(createOrder({...cart, orderItem:cart.cartItem}))
     }
+    console.log(cart.cartItem)
+    console.log(orderCreate)
+    console.log(order)
   
-    // useEffect(()=> {
-    //     //redirect to order details page
-    //     if(success) {
-    //         history.push(`/order/${order._id}`)
-    //         dispatch(orderReset())
-    //     }
-    // },[dispatch, history, order, success])
+    useEffect(()=> {
+        //redirect to order details page
+        if(success) {
+            history.push(`/order/${order.id}`)
+            dispatch(orderReset())
+        }
+    },[dispatch, history, order, success])
 
     return (
         <div>
