@@ -40,7 +40,7 @@ export const orderReset = (data) => {
     }
 }
 
-export const createOrder = (order) => async(dispatch, getState) => {
+export const createOrder = (order) => async(dispatch, getState) => {//Returns the current state tree of your application
     dispatch(orderRequest(order))
     try{
         const {auth: {userInfo}} = getState()
