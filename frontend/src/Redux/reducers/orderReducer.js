@@ -8,8 +8,7 @@ import {
 const initialState = {
     loading: false,
     success: false,
-    order:{}
-    
+
 }
 
 const orderReducer = (state=initialState , action) => {

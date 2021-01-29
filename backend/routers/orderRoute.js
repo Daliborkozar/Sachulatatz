@@ -16,7 +16,6 @@ orderRouter.post(
         const order = new Orders({
             orderItem: req.body.orderItem,
             shippingAddress: req.body.shippingAddress,
-            itemPrice: req.body.price,
             totalPrice: req.body.totalPrice,
             //define a middleware to authenticate user utils.js
             user: req.user._id,

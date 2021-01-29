@@ -20,18 +20,20 @@ const OrderScreen = () => {
         return prev + current.qty * 1
         }, 0);
     let cartSumPrice = cart.cartItem.reduce((acc, value) => acc + value.price * value.qty, 0)
-
-    const placeOrderHandler = () => {
-        dispatch(createOrder({...cart, orderItem:cart.cartItem}))
-    }
-    console.log(cart.cartItem)
-    console.log(orderCreate)
+    //sum for post req
+    cart.totalPrice = cartSumPrice
+    console.log(cart)
     console.log(order)
+    
+    const placeOrderHandler = () => {
+        dispatch(createOrder({...cart,orderItem:cart.cartItem}))
+    }
+  
   
     useEffect(()=> {
         //redirect to order details page
         if(success) {
-            history.push(`/order/${order.id}`)
+            history.push(`/order/`)
             dispatch(orderReset())
         }
     },[dispatch, history, order, success])
