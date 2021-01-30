@@ -97,9 +97,6 @@ const ShippingScreen = () => {
                     <label/>
                     <button className={classes.btn} type="submit">Nastavi</button>
                 </div>
-                
-                
-
             </form>
         </div>
     )

@@ -6,7 +6,8 @@
     flex-wrap: wrap;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 5rem 15rem;
+    margin: 2rem 15rem;
+    
 }
 
 .column1 {
