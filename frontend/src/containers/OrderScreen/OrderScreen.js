@@ -45,14 +45,12 @@ const OrderScreen = () => {
     }
   }, [dispatch, history, order, success]);
 
-  const checkout = <CheckoutSteps step1 step2 step3 /> 
-  const modal = showModal ? <Modal/> : null
+  const modal = showModal ? <Modal/> : <CheckoutSteps step1 step2 step3 /> 
   
 
   return (
     <div>
-        
-    {checkout}
+
         {modal}
       <div className={classes.OrderContainer}>
         <div className={classes.col2}>
