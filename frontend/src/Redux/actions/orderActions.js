@@ -87,7 +87,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
 };
 
 export const orderHistory = () => async(dispatch, getState) => {
-    dispatch()
+    dispatch(orderHistoryRequest())
     const {auth: {userInfo}} = getState()
     try{
         const {data} = await Axios.get('/api/orders/history' , {
@@ -95,9 +95,9 @@ export const orderHistory = () => async(dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`,
               },
         })
-        dispatch()
+        dispatch(orderHistorySuccess(data))
 
     }catch(error){
-        dispatch()
+        dispatch(orderHistoryFail)
     }
 }
