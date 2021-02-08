@@ -50,7 +50,6 @@ const OrderScreen = () => {
 
   return (
     <div>
-
         {modal}
       <div className={classes.OrderContainer}>
         <div className={classes.col2}>

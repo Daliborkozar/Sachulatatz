@@ -98,6 +98,6 @@ export const orderHistory = () => async(dispatch, getState) => {
         dispatch(orderHistorySuccess(data))
 
     }catch(error){
-        dispatch(orderHistoryFail)
+        dispatch(orderHistoryFail(error))
     }
 }

@@ -2,7 +2,10 @@
 
 I will be building this project using React for the frontend and node,express and mongoDB for the backend.
 
-Since I only used firebase for backend this time my challenge is to build a complete backend similar to firebase
+Since I only used firebase for backend this time my challenge is to build a complete backend.
+
+In the near future my plan is a remake of this app in Next.js
+
 
 TODO:
 ~~Template design~~  

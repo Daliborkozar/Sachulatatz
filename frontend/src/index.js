@@ -12,6 +12,7 @@ import authReducer from './Redux/reducers/authReducer'
 import thunk from 'redux-thunk'
 import registerReducer from './Redux/reducers/registerReducer';
 import orderReducer from './Redux/reducers/orderReducer';
+import orderHistoryReducer from './Redux/reducers/orderHistoryReducer'
 
 
 
@@ -23,7 +24,8 @@ const reducer = combineReducers({
   cart: cartReducer,
   auth: authReducer,
   register: registerReducer,
-  orderCreate: orderReducer
+  orderCreate: orderReducer,
+  orderHistory: orderHistoryReducer,
 })
 
 const store= createStore(
